@@ -5,6 +5,7 @@
   <title>Admin modify class</title>
 </head>
 <body>
+  <h1>Modify Class</h1>
   <form class="" action="index.html" method="post">
     <input type="text" name="" value="" placeholder="class name">
     <br>
