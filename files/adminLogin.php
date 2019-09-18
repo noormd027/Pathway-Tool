@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Admin Login</title>
+    <link rel="stylesheet" href="/css/master.css">
   </head>
   <body>
     <form class="" action="index.html" method="post">
