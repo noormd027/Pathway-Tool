@@ -1,3 +1,6 @@
+<?php
+include './xcommon.php';
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
