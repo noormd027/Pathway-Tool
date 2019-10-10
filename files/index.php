@@ -3,7 +3,6 @@ include "./xcommon.php";
 
 // Note to the devs of this page!
 // commented code is relevant for later on, but not now
-//
 
 //if (empty($_REQUEST['i'])) $_REQUEST['i'] = '1';
 //switch($_REQUEST['i'])
