@@ -1,6 +1,26 @@
 <?php
 include "./xcommon.php";
+
+if (empty($_REQUEST['i'])) $_REQUEST['i'] = '1';
+switch($_REQUEST['i'])
+{
+  case '1':
+		$query = " sort by ;";
+		$results = mysqli_query($conn, $query) or die(mysqli_error($conn));
+		break;
+	case '2':
+		$query = " sort by ;";
+		$results = mysqli_query($conn, $query) or die(mysqli_error($conn));
+		break;
+	case '3':
+		$query = " sort by ;";
+		$results = mysqli_query($conn, $query) or die(mysqli_error($conn));
+		break;
+}
+
 ?>
+
+  <p>Sort by: | <a href='./pathways.php?i=1'>Class ID</a> | <a href='./pathways.php?i=2'>Class Name</a> | <a href='./pathways.php?i=3'>Year</a></p>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
