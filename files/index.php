@@ -58,12 +58,10 @@ $ProgrammeResults = mysqli_query($GLOBALS['conn'], $ProgrammeQuery) or die(mysql
       // mikex.co.nz/testing/pathways.php?id=xxx
       // this should work, once there is a pathways.php page setup
       ?>
-      <li><?php echo $ID." - ".$Name; ?> - <a href="pathways.php?id=<?php echo $ID; ?>">Click Me</a> </li>
+      <li><?php echo $ID." - ".$Name; ?> - <a href="pathways.php?i=1&id=<?php echo $ID; ?>">Click Me</a> </li>
       <?php
     }
     ?>
-
-    <!--The code below is fine, however having static lists is bad, and we will re-write this later-->
 
 </ul>
 </body>
