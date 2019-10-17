@@ -1,19 +1,22 @@
 <?php
 include "./xcommon.php";
 
+// get the id from the previous page to use here
+$id = $_REQUEST['id']
+
 if (empty($_REQUEST['i'])) $_REQUEST['i'] = '1';
 switch($_REQUEST['i'])
 {
   case '1':
-		$query = " sort by ;";
+		$query = "select * from Pathways where ProgrammeID=$id sort by PathwayID order des;";
 		$results = mysqli_query($conn, $query) or die(mysqli_error($conn));
 		break;
 	case '2':
-		$query = " sort by ;";
+		$query = "select * from Pathways where ProgrammeID=$id sort by PathwayID order asc;";
 		$results = mysqli_query($conn, $query) or die(mysqli_error($conn));
 		break;
 	case '3':
-		$query = " sort by ;";
+		$query = "select * from Pathways where ProgrammeID=$id sort by PathwayName order des;";
 		$results = mysqli_query($conn, $query) or die(mysqli_error($conn));
 		break;
 }
