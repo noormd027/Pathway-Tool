@@ -17,9 +17,9 @@ include "./xcommon.php";
 //  ListDegrees(0);
 //}
 
-$ProgrammeQuerry = "SELECT * FROM Programme order by ProgrammeName ASC;";
+$ProgrammeQuery = "SELECT * FROM Programme order by ProgrammeName ASC;";
 //$PathwayQuerry = "SELECT * FROM Pathway order by PathwayName ASC;";
-$ProgrammeResults = mysqli_query($conn, $ProgrammeQuerry) or die(mysqli_error($conn));
+$ProgrammeResults = mysqli_query($GLOBALS['conn'], $ProgrammeQuery) or die(mysqli_error($GLOBALS['conn']));
 //$PathwayResults = mysqli_query($conn, $PathwayQuerry) or die(mysqli_error($conn));
 
 ?>
@@ -29,7 +29,7 @@ $ProgrammeResults = mysqli_query($conn, $ProgrammeQuerry) or die(mysqli_error($c
 <head>
   <meta charset="utf-8">
   <title>Pathway Planner</title>
-  <link rel="stylesheet" href="./style.sss">
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -51,7 +51,7 @@ $ProgrammeResults = mysqli_query($conn, $ProgrammeQuerry) or die(mysqli_error($c
     // however this works for what we have currently developed.
     while ($programmes = mysqli_fetch_array($ProgrammeResults))
     {
-      $ID = $programmes['ProgrammeID']
+      $ID = $programmes['ProgrammeID'];
       $Name = $programmes['ProgrammeName'];
 
       // this is the redirect code, looks messy but you should get an output like:
@@ -88,3 +88,4 @@ $ProgrammeResults = mysqli_query($conn, $ProgrammeQuerry) or die(mysqli_error($c
 </ul>
 </body>
 </html>
+<?php
