@@ -27,8 +27,6 @@ switch($_REQUEST['i'])
 
 ?>
 
-  <p>Sort by: | <a href='./pathways.php?i=1&id=<?php echo $id ?>'>Class ID</a> | <a href='./pathways.php?i=2&id=<?php echo $id ?>'>Class Name</a> | <a href='./pathways.php?i=3&id=<?php echo $id ?>'>Year</a></p>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -43,6 +41,8 @@ switch($_REQUEST['i'])
       <li><a href="index.html" target="_blank">Pathway Planner</a></li>
     </ul>
   </nav>
+
+  <p>Sort by: | <a href='./pathways.php?i=1&id=<?php echo $id ?>'>Class ID</a> | <a href='./pathways.php?i=2&id=<?php echo $id ?>'>Class Name</a> | <a href='./pathways.php?i=3&id=<?php echo $id ?>'>Year</a></p>
 
   <?php
 
