@@ -58,33 +58,13 @@ $ProgrammeResults = mysqli_query($GLOBALS['conn'], $ProgrammeQuery) or die(mysql
       // mikex.co.nz/testing/pathways.php?id=xxx
       // this should work, once there is a pathways.php page setup
       ?>
-      <li><?php echo $ID." - ".$Name; ?> - <a href="pathways.php?id=<?php echo $ID; ?>">Temp Link</a> </li>
+      <li><?php echo $ID." - ".$Name; ?> - <a href="pathways.php?id=<?php echo $ID; ?>">Click Me</a> </li>
       <?php
     }
     ?>
 
     <!--The code below is fine, however having static lists is bad, and we will re-write this later-->
 
-    <ul class="Bachelors">
-      <li><a href="#">Bachelor of Architectural Techlogy</a></li>
-      <li><a href="#">Bachelor of Computer Systems</a>
-
-        <ul>
-          <li><a href="#">Computer Networks and Cloud Compting</a></li>
-          <li><a href="#">Software Engineering</a></li>
-          <li><a href="#">Games Development</a></li>
-          <li><a href="#">Business Intellingence</a></li>
-          <li><a href="cybersecurity.html" target="_blank">Cybersecurity</a></li>
-        </ul>
-      </li>
-
-      <li><a href="#">Bachelor of Nursing</a></li>
-      <li><a href="#">Bachelor of Osteopath</a></li>
-    </ul>
-  </li>
-
-  <li><a href="#">Graduate Diplomas</a></li>
-  <li><a href="#">Postgraduates</a></li>
 </ul>
 </body>
 </html>
