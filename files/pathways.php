@@ -10,17 +10,17 @@ switch($_REQUEST['i'])
 {
   case '1':
     // sort by id lowest to highest
-		$query = "select * from Pathways where ProgrammeID=$id order by PathwayID desc;";
+		$query = "select * from Pathway where ProgrammeID=$id order by PathwayID desc;";
 		$results = mysqli_query($conn, $query) or die(mysqli_error($conn));
 		break;
 	case '2':
     // sort by id highest to lowest
-		$query = "select * from Pathways where ProgrammeID=$id order by PathwayID asc;";
+		$query = "select * from Pathway where ProgrammeID=$id order by PathwayID asc;";
 		$results = mysqli_query($conn, $query) or die(mysqli_error($conn));
 		break;
 	case '3':
     // sort by name a-z
-		$query = "select * from Pathways where ProgrammeID=$id order by PathwayName desc;";
+		$query = "select * from Pathway where ProgrammeID=$id order by PathwayName desc;";
 		$results = mysqli_query($conn, $query) or die(mysqli_error($conn));
 		break;
 }
