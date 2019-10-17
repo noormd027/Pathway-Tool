@@ -11,17 +11,17 @@ switch($_REQUEST['i'])
   case '1':
     // sort by id lowest to highest
 		$query = "select * from Pathway where ProgrammeID=$id order by PathwayID desc;";
-		$results = mysqli_query($conn, $query) or die(mysqli_error($conn));
+		$results = mysqli_query($GLOBALS['conn'], $query) or die(mysqli_error($GLOBALS['conn']));
 		break;
 	case '2':
     // sort by id highest to lowest
 		$query = "select * from Pathway where ProgrammeID=$id order by PathwayID asc;";
-		$results = mysqli_query($conn, $query) or die(mysqli_error($conn));
+		$results = mysqli_query($GLOBALS['conn'], $query) or die(mysqli_error($GLOBALS['conn']));
 		break;
 	case '3':
     // sort by name a-z
 		$query = "select * from Pathway where ProgrammeID=$id order by PathwayName desc;";
-		$results = mysqli_query($conn, $query) or die(mysqli_error($conn));
+		$results = mysqli_query($GLOBALS['conn'], $query) or die(mysqli_error($GLOBALS['conn']));
 		break;
 }
 
@@ -49,7 +49,7 @@ switch($_REQUEST['i'])
   // use the id that is parsed to this page to determine the title of the programme
   // then set the variable PTitle to be the right rewsult, making this page modular
   $gettitle = "select * from Programme where ProgrammeID=$id";
-  $titleresult = mysqli_query($conn, $gettitle) or die(mysqli_error($conn));
+  $titleresult = mysqli_query($GLOBALS['conn'], $gettitle) or die(mysqli_error($GLOBALS['conn']));
 
   // bad logic but currently only 1 needs to be selected
   while ($mytitle = mysqli_fetch_array($titleresult))
