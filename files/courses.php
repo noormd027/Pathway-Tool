@@ -4,27 +4,6 @@ include "./xcommon.php";
 // get the id from the previous page to use here
 $id = $_REQUEST['id'];
 
-// switch is used to sort items in the page
-if (empty($_REQUEST['i'])) $_REQUEST['i'] = '1';
-switch($_REQUEST['i'])
-{
-  case '1':
-    // sort by id lowest to highest
-		$query = "select * from Pathway where ProgrammeID=$id order by PathwayID desc;";
-		$results = mysqli_query($GLOBALS['conn'], $query) or die(mysqli_error($GLOBALS['conn']));
-		break;
-	case '2':
-    // sort by id highest to lowest
-		$query = "select * from Pathway where ProgrammeID=$id order by PathwayID asc;";
-		$results = mysqli_query($GLOBALS['conn'], $query) or die(mysqli_error($GLOBALS['conn']));
-		break;
-	case '3':
-    // sort by name a-z
-		$query = "select * from Pathway where ProgrammeID=$id order by PathwayName desc;";
-		$results = mysqli_query($GLOBALS['conn'], $query) or die(mysqli_error($GLOBALS['conn']));
-		break;
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -41,8 +20,6 @@ switch($_REQUEST['i'])
       <li><a href="index.html" target="_blank">Pathway Planner</a></li>
     </ul>
   </nav>
-
-  <p>Sort by: | <a href='./pathways.php?i=1&id=<?php echo $id ?>'>Class ID</a> | <a href='./pathways.php?i=2&id=<?php echo $id ?>'>Class Name</a> | <a href='./pathways.php?i=3&id=<?php echo $id ?>'>Year</a></p>
 
   <?php
 
