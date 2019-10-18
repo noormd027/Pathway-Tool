@@ -4,6 +4,16 @@ include "./xcommon.php";
 // get the id from the previous page to use here
 $id = $_REQUEST['id'];
 
+// get all courses that match the id of the selected pathway
+$query1 = "select * from courses where CourseID=$id;";
+
+// display Compulsory classes of all courses
+$query2 = "select * from courses where Compulsory='Y';";
+
+//
+$results1 = mysqli_query($GLOBALS['conn'], $query1) or die(mysqli_error($GLOBALS['conn']));;
+$results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS['conn']));;
+
 ?>
 
 <!DOCTYPE html>
