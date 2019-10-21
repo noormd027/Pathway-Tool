@@ -31,6 +31,8 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
     </ul>
   </nav>
 
+  <h1>COMPULSORY CLASSES</h1>
+
   <?php
 
   // use the id that is parsed to this page to determine the title of the programme
@@ -48,9 +50,9 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
     echo "<h1>".$PTitle."</h1>";
   }
 
-  // bulk logic, these are the fields from the database
-  // this displays every class in the pathway, which will be needed until the database is updated
-  while ($CourseResults = mysqli_fetch_array($results1))
+  // display the Compulsory courses first, this has to be its own loop, will need to be updated
+  // when the database is updated, so the querry looks for the right data
+  while ($CourseResults = mysqli_fetch_array($results2))
   {
     $CC = $CourseResults['CourseCode'];
     $CName = $CourseResults['CourseName'];
@@ -81,8 +83,19 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
     echo "<hr>";
   }
 
-  // display the Compulsory courses, this has to be its own loop
-  while ($CourseResults = mysqli_fetch_array($results2))
+// BR and Title below to seperate the two blocks
+?>
+
+<br>
+<br>
+<br>
+<h1>CLASSES IN PATHWAY</h1>
+<h3>WIP untill database is updated</h3>
+
+<<?php
+  // bulk logic, these are the fields from the database
+  // this displays every class in the pathway, which will be needed until the database is updated
+  while ($CourseResults = mysqli_fetch_array($results1))
   {
     $CC = $CourseResults['CourseCode'];
     $CName = $CourseResults['CourseName'];
