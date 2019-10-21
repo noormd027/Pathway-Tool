@@ -69,7 +69,6 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
     echo "<h3>In pathway: ".$PWID."</h3>";
 
     // display extra info
-    echo "<hr>";
     echo "<h2>PreRequisite: ".$Requisite."</h2>";
     echo "<h2>CoRequisite: ".$CRequisite."</h2>";
     echo "<h3>Compulsory: ".$Compulsory."</h3>";
@@ -77,6 +76,9 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
 
     // close the block
     echo "</div>";
+
+    // ruler for seperation
+    echo "<hr>";
   }
 
   // display the Compulsory courses, this has to be its own loop
@@ -99,7 +101,6 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
     echo "<h3>In pathway: ".$PWID."</h3>";
 
     // display extra info
-    echo "<hr>";
     echo "<h2>PreRequisite: ".$Requisite."</h2>";
     echo "<h2>CoRequisite: ".$CRequisite."</h2>";
     echo "<h3>Compulsory: ".$Compulsory."</h3>";
@@ -107,6 +108,9 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
 
     // close the block
     echo "</div>";
+
+    // ruler for seperation
+    echo "<hr>";
   }
 
   ?>
