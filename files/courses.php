@@ -52,10 +52,12 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
   // this displays every class in the pathway, which will be needed until the database is updated
   while ($CourseResults = mysqli_fetch_array($results1))
   {
-    $CID = $CourseResults['CourseID'];
+    $CC = $CourseResults['CourseCode'];
     $CName = $CourseResults['CourseName'];
+    $level = $CourseResults['Level'];
     $PWID = $CourseResults['PathwayID'];
-    $Requisite = $CourseResults['Requisite'];
+    $Requisite = $CourseResults['PreRequisite'];
+    $CRequisite = $CourseResults['CoRequisite'];
     $Compulsory = $CourseResults['Compilsory'];
     $Credits = $CourseResults['Credits'];
 
@@ -63,14 +65,15 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
     echo "<div>";
 
     // display each courses titles
-    echo "<h2>".$CName." - ".$CID."</h2>";
+    echo "<h2>".$CName." - ".$level." - ".$CC."</h2>";
     echo "<h3>In pathway: ".$PWID."</h3>";
 
     // display extra info
     echo "<hr>";
-    echo "<h2>".$Requisite."</h2>";
-    echo "<h3>".$Compulsory."</h3>";
-    echo "<h3>".$Credits."</h3>";
+    echo "<h2>PreRequisite: ".$Requisite."</h2>";
+    echo "<h2>CoRequisite: ".$CRequisite."</h2>";
+    echo "<h3>Compulsory: ".$Compulsory."</h3>";
+    echo "<h3>Credits: ".$Credits."</h3>";
 
     // close the block
     echo "</div>";
@@ -79,10 +82,12 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
   // display the Compulsory courses, this has to be its own loop
   while ($CourseResults = mysqli_fetch_array($results2))
   {
-    $CID = $CourseResults['CourseID'];
+    $CC = $CourseResults['CourseCode'];
     $CName = $CourseResults['CourseName'];
+    $level = $CourseResults['Level'];
     $PWID = $CourseResults['PathwayID'];
-    $Requisite = $CourseResults['Requisite'];
+    $Requisite = $CourseResults['PreRequisite'];
+    $CRequisite = $CourseResults['CoRequisite'];
     $Compulsory = $CourseResults['Compilsory'];
     $Credits = $CourseResults['Credits'];
 
@@ -90,14 +95,15 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
     echo "<div>";
 
     // display each courses titles
-    echo "<h2>".$CName." - ".$CID."</h2>";
+    echo "<h2>".$CName." - ".$level." - ".$CC."</h2>";
     echo "<h3>In pathway: ".$PWID."</h3>";
 
     // display extra info
     echo "<hr>";
-    echo "<h2>".$Requisite."</h2>";
-    echo "<h3>".$Compulsory."</h3>";
-    echo "<h3>".$Credits."</h3>";
+    echo "<h2>PreRequisite: ".$Requisite."</h2>";
+    echo "<h2>CoRequisite: ".$CRequisite."</h2>";
+    echo "<h3>Compulsory: ".$Compulsory."</h3>";
+    echo "<h3>Credits: ".$Credits."</h3>";
 
     // close the block
     echo "</div>";
