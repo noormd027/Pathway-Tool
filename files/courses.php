@@ -49,6 +49,7 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
   }
 
   // bulk logic, these are the fields from the database
+  // this displays every class in the pathway, which will be needed until the database is updated
   while ($CourseResults = mysqli_fetch_array($results1))
   {
     $CID = $CourseResults['CourseID'];
@@ -58,7 +59,7 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
     $Compulsory = $CourseResults['Compilsory'];
     $Credits = $CourseResults['Credits'];
 
-    // segment each pathway into  its own box
+    // segment each course into  its own box
     echo "<div>";
 
     // display each courses titles
@@ -75,7 +76,7 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
     echo "</div>";
   }
 
-  // display the Compulsory courses
+  // display the Compulsory courses, this has to be its own loop
   while ($CourseResults = mysqli_fetch_array($results2))
   {
     $CID = $CourseResults['CourseID'];
@@ -85,7 +86,7 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
     $Compulsory = $CourseResults['Compilsory'];
     $Credits = $CourseResults['Credits'];
 
-    // segment each pathway into  its own box
+    // segment each course into  its own box
     echo "<div>";
 
     // display each courses titles
