@@ -5,10 +5,10 @@ include "./xcommon.php";
 $id = $_REQUEST['id'];
 
 // get all courses that match the id of the selected pathway
-$query1 = "select * from courses where CourseID=$id;";
+$query1 = "select * from Course;";
 
 // display Compulsory classes of all courses
-$query2 = "select * from courses where Compulsory='Y';";
+$query2 = "select * from Course where Compulsory='Y';";
 
 //
 $results1 = mysqli_query($GLOBALS['conn'], $query1) or die(mysqli_error($GLOBALS['conn']));;
@@ -27,7 +27,7 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
   <nav>
     <ul>
       <li><a href="https://www.unitec.ac.nz/" target="_blank">Unitec</a></li>
-      <li><a href="index.html" target="_blank">Pathway Planner</a></li>
+      <li><a href="index.php" target="_blank">Pathway Planner</a></li>
     </ul>
   </nav>
 
@@ -38,6 +38,7 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
   $gettitle = "select * from Programme where ProgrammeID=$id";
   $titleresult = mysqli_query($GLOBALS['conn'], $gettitle) or die(mysqli_error($GLOBALS['conn']));
 
+
   // bad logic but currently only 1 needs to be selected
   while ($mytitle = mysqli_fetch_array($titleresult))
   {
@@ -47,20 +48,55 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
     echo "<h1>".$PTitle."</h1>";
   }
 
-  while ($PathwayResults = mysqli_fetch_array($results))
+  // bulk logic, these are the fields from the database
+  while ($CourseResults = mysqli_fetch_array($results1))
   {
-    $PWID = $PathwayResults['PathwayID'];
-    $PWName = $PathwayResults['PathwayName'];
+    $CID = $CourseResults['CourseID'];
+    $CName = $CourseResults['CourseName'];
+    $PWID = $CourseResults['PathwayID'];
+    $Requisite = $CourseResults['Requisite'];
+    $Compulsory = $CourseResults['Compilsory'];
+    $Credits = $CourseResults['Credits'];
 
     // segment each pathway into  its own box
     echo "<div>";
 
-    // display each pathway
-    echo "<h2>".$PWName."</h2>";
-    echo "<h3>".$PWID."</h3>";
+    // display each courses titles
+    echo "<h2>".$CName." - ".$CID."</h2>";
+    echo "<h3>In pathway: ".$PWID."</h3>";
 
-    //create a link to the next page, parsing the pathwayID
-    echo "<a href='./courses.php?id=".$PWID."'>Show Courses in Pathway</a>";
+    // display extra info
+    echo "<hr>";
+    echo "<h2>".$Requisite."</h2>";
+    echo "<h3>".$Compulsory."</h3>";
+    echo "<h3>".$Credits."</h3>";
+
+    // close the block
+    echo "</div>";
+  }
+
+  // display the Compulsory courses
+  while ($CourseResults = mysqli_fetch_array($results2))
+  {
+    $CID = $CourseResults['CourseID'];
+    $CName = $CourseResults['CourseName'];
+    $PWID = $CourseResults['PathwayID'];
+    $Requisite = $CourseResults['Requisite'];
+    $Compulsory = $CourseResults['Compilsory'];
+    $Credits = $CourseResults['Credits'];
+
+    // segment each pathway into  its own box
+    echo "<div>";
+
+    // display each courses titles
+    echo "<h2>".$CName." - ".$CID."</h2>";
+    echo "<h3>In pathway: ".$PWID."</h3>";
+
+    // display extra info
+    echo "<hr>";
+    echo "<h2>".$Requisite."</h2>";
+    echo "<h3>".$Compulsory."</h3>";
+    echo "<h3>".$Credits."</h3>";
 
     // close the block
     echo "</div>";
