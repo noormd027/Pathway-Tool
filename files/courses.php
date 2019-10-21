@@ -92,7 +92,7 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
 <h1>CLASSES IN PATHWAY</h1>
 <h3>WIP untill database is updated</h3>
 
-<<?php
+<?php
   // bulk logic, these are the fields from the database
   // this displays every class in the pathway, which will be needed until the database is updated
   while ($CourseResults = mysqli_fetch_array($results1))
