@@ -6,7 +6,7 @@ include './xcommon.php';
 <head>
   <meta charset="utf-8">
   <title>Admin modify class</title>
-  <link rel="stylesheet" href="/css/master.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <h1>Modify Class</h1>
