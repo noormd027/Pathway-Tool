@@ -1,8 +1,8 @@
 <?php
 include "./xcommon.php";
 
-// select all the programmes and display them
-$ProgrammeQuery = "SELECT * FROM Programme;";
+// get data
+$ProgrammeQuery = "SELECT * FROM Programme order by ProgrammeName ASC;";
 $ProgrammeResults = mysqli_query($GLOBALS['conn'], $ProgrammeQuery) or die(mysqli_error($GLOBALS['conn']));
 
 ?>
@@ -29,30 +29,14 @@ $ProgrammeResults = mysqli_query($GLOBALS['conn'], $ProgrammeQuery) or die(mysql
   <ul class="courseSelections">
     <?php
 
-    // while there is a record to show, display the ID and the Hame
+    // for every degree we have in the database, print
     while ($programmes = mysqli_fetch_array($ProgrammeResults))
     {
-      // get variables to print
       $ID = $programmes['ProgrammeID'];
       $Name = $programmes['ProgrammeName'];
 
-      // this is the redirect code, looks messy but you should get an output like:
-      // mikex.co.nz/testing/pathways.php?id=xxx
-
-      // get all the pathways that are relevent to the selected degree
-      $PathwayQuerry = "SELECT PathwayID FROM Pathway where ProgrammeID=$ID;";
-      $PathwayResults = mysqli_query($conn, $PathwayQuerry) or die(mysqli_error($conn));
-
-      // if there is a pathway to display, show it
-      while ($pathways = mysqli_fetch_array($PathwayResults))
-      {
-        // set the link ID to the correct ID
-        $PWID = $pathways['PathwayID'];
-
-        //revised the code so it's easier to read
-        echo "<li>$ID - $Name: <a href='pathways.php?i=1&id=$PWID'>Click Me</a></li>";
+      echo "<li>$ID - $Name: <a href='pathways.php?i=1&id=$ID'>Click Me</a></li>";
     }
-  }
     ?>
 
 </ul>
