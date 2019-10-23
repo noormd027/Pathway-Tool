@@ -21,7 +21,7 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
 <head>
   <meta charset="utf-8">
   <title>Course List</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./courses.css">
 </head>
 <body>
   <nav>
@@ -74,6 +74,7 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
     echo "<div>";
 
     // display each courses titles
+    echo "<th>";
     echo "<h2>".$CName." - ".$level." - ".$CC."</h2>";
     echo "<h2>In pathway: ".$PWID."</h2>";
 
