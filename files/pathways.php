@@ -72,18 +72,11 @@ switch($_REQUEST['i'])
     echo "<h2>".$PWName."</h2>";
     echo "<h3>".$PWID."</h3>";
 
-    // new querry so that the link to the courses page will display the correct link
-    $ClassQuery = "select * from Course where PathwayID=$PWID";
-    $ClassQueryResult = mysqli_query($GLOBALS['conn'], $query) or die(mysqli_error($GLOBALS['conn']));
+    //create a link to the next page, parsing the pathwayID
+    echo "<a href='./courses.php?id=".$PWID."'>Click me</a>";
 
-    while ($PathwayResults = mysqli_fetch_array($results))
-    {
-      //create a link to the next page, parsing the pathwayID
-      echo "<a href='./courses.php?id=".$PWID."'>Click me</a>";
-
-      // close the block
-      echo "</div>";
-    }
+    // close the block
+    echo "</div>";
   }
 
   ?>
