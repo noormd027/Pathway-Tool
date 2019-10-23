@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: white;
+  background-color: white ;
 }
  nav ul{
    float: left;
@@ -29,7 +29,12 @@ nav ul li a{
    text-align: center;
    padding-top: 40px;
    padding-bottom: 70px;
+   color: green;
 }
+ h2{
+  font-family: ;
+
+ }
 ul.courseSelections{
 
 }
