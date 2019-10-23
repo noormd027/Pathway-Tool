@@ -61,7 +61,7 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
     $PWID = $CourseResults['PathwayID'];
     $Requisite = $CourseResults['PreRequisite'];
     $CRequisite = $CourseResults['CoRequisite'];
-    $Compulsory = $CourseResults['Compilsory'];
+    $Compulsory = $CourseResults['Compulsory'];
     $Credits = $CourseResults['Credits'];
 
     // segment each course into  its own box
@@ -134,7 +134,7 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
     $PWID = $CourseResults['PathwayID'];
     $Requisite = $CourseResults['PreRequisite'];
     $CRequisite = $CourseResults['CoRequisite'];
-    $Compulsory = $CourseResults['Compilsory'];
+    $Compulsory = $CourseResults['Compulsory'];
     $Credits = $CourseResults['Credits'];
 
     // segment each course into  its own box
