@@ -1,26 +1,9 @@
 <?php
 include "./xcommon.php";
 
-// Note to the devs of this page!
-// commented code is relevant for later on, but not now
-
-//if (empty($_REQUEST['i'])) $_REQUEST['i'] = '1';
-//switch($_REQUEST['i'])
-//{
-//  case '1':
-//  ListDegrees(0);
-//  break;
-//  case '2':
-//  tempThing();
-//  break;
-//  default:
-//  ListDegrees(0);
-//}
-
-$ProgrammeQuery = "SELECT * FROM Programme order by ProgrammeName ASC;";
-//$PathwayQuerry = "SELECT * FROM Pathway order by PathwayName ASC;";
+// select all the programmes and display them
+$ProgrammeQuery = "SELECT * FROM Programme;";
 $ProgrammeResults = mysqli_query($GLOBALS['conn'], $ProgrammeQuery) or die(mysqli_error($GLOBALS['conn']));
-//$PathwayResults = mysqli_query($conn, $PathwayQuerry) or die(mysqli_error($conn));
 
 ?>
 
@@ -45,21 +28,29 @@ $ProgrammeResults = mysqli_query($GLOBALS['conn'], $ProgrammeQuery) or die(mysql
   <h2>Select Your Study Options</h2>
   <ul class="courseSelections">
     <?php
-    // this code is sooo bad, this needs fixing, currently parsing the id to
-    // another page to do the processing and show the list of attached pathways
-    // but this can be re-written so only this page is needed by using a switch
-    // however this works for what we have currently developed.
+
+    // while there is a record to show, display the ID and the Hame
     while ($programmes = mysqli_fetch_array($ProgrammeResults))
     {
+      // get variables to print
       $ID = $programmes['ProgrammeID'];
       $Name = $programmes['ProgrammeName'];
 
       // this is the redirect code, looks messy but you should get an output like:
       // mikex.co.nz/testing/pathways.php?id=xxx
-      // this should work, once there is a pathways.php page setup
-      ?>
-      <li><?php echo $ID." - ".$Name; ?> - <a href="pathways.php?i=1&id=<?php echo $ID; ?>">Click Me</a> </li>
-      <?php
+
+      // get all the pathways that are relevent to the selected degree
+      $PathwayQuerry = "SELECT PathwayID FROM Pathway where ProgrammeID=$ID;";
+      $PathwayResults = mysqli_query($conn, $PathwayQuerry) or die(mysqli_error($conn));
+
+      // if there is a pathway to display, show it
+      while ($pathways = mysqli_fetch_array($PathwayResults))
+      {
+        // set the link ID to the correct ID
+        $PWID = $pathways['PathwayID'];
+
+        //revised the code so it's easier to read
+        echo "<li>$ID - $Name: <a href='pathways.php?i=1&id=$PWID'>Click Me</a></li>";
     }
     ?>
 
