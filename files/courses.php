@@ -73,9 +73,10 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
 
     echo "<div>";
 
-    // display each courses titles
-    echo "<th>";
-    echo "<h2>".$CName." - ".$level." - ".$CC."</h2>";
+    // display each courses info
+    echo "<h2>Course name: ".$CName."</h2>";
+    echo "<h2>Course level: ".$level."</h2>";
+    echo "<h2>Course Code: ".$CC."</h2>";
     echo "<h2>In pathway: ".$PWID."</h2>";
 
     // if the class has no PreRequisite's then print NONE, otherwise print the correct data
