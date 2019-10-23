@@ -54,6 +54,7 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
   // when the database is updated, so the querry looks for the right data
   while ($CourseResults = mysqli_fetch_array($results2))
   {
+    $CID = $CourseResults['CourseID'];
     $CC = $CourseResults['CourseCode'];
     $CName = $CourseResults['CourseName'];
     $level = $CourseResults['Level'];
@@ -100,6 +101,9 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
     // display the course credits
     echo "<h2>Credits: ".$Credits."</h2>";
 
+    // display a link to the correct class information
+    echo "<a href='./classes.php?id='".$CID.">";
+
     // close the block
     echo "</div>";
 
@@ -121,6 +125,8 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
   // this displays every class in the pathway, which will be needed until the database is updated
   while ($CourseResults = mysqli_fetch_array($results1))
   {
+    // get data from the databaseS
+    $CID = $CourseResults['CourseID'];
     $CC = $CourseResults['CourseCode'];
     $CName = $CourseResults['CourseName'];
     $level = $CourseResults['Level'];
@@ -131,24 +137,51 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
     $Credits = $CourseResults['Credits'];
 
     // segment each course into  its own box
+
+    // NOTE TO DEVS:
+    // ECHO IS WHERE YOU CAN DO THE STYLING
+    // You can change the order of things as long as you keep them in the blocks
+    // that they are in currently
+
     echo "<div>";
 
     // display each courses titles
     echo "<h2>".$CName." - ".$level." - ".$CC."</h2>";
-    echo "<h3>In pathway: ".$PWID."</h3>";
+    echo "<h2>In pathway: ".$PWID."</h2>";
 
-    // display extra info
-    echo "<h2>PreRequisite: ".$Requisite."</h2>";
-    echo "<h2>CoRequisite: ".$CRequisite."</h2>";
-    echo "<h3>Compulsory: ".$Compulsory."</h3>";
-    echo "<h3>Credits: ".$Credits."</h3>";
+    // if the class has no PreRequisite's then print NONE, otherwise print the correct data
+    if ($Requisite == NULL) {
+      echo "<h2>PreRequisite: None</h2>";
+    }else {
+      echo "<h2>PreRequisite: ".$Requisite."</h2>";
+    }
+
+    // if the class has no CoRequisite's then print NONE, otherwise print the correct data
+    if ($CRequisite == NULL) {
+      echo "<h2>CoRequisite: None</h2>";
+    }else {
+      echo "<h2>CoRequisite: ".$CRequisite."</h2>";
+    }
+
+    // if the class is compulsory display a yes, if not, display a no
+    if ($Compulsory == "Y") {
+      echo "<h2>Compulsory: Yes</h2>";
+    } else {
+      echo "<h2>Compulsory: No</h2>";
+    }
+
+    // display the course credits
+    echo "<h2>Credits: ".$Credits."</h2>";
+
+    // display a link to the correct class information
+    echo "<a href='./classes.php?id='".$CID.">";
 
     // close the block
     echo "</div>";
 
     // ruler for seperation
     echo "<hr>";
-  }
+}
 
   ?>
 
