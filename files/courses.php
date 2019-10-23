@@ -103,7 +103,7 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
     echo "<h2>Credits: ".$Credits."</h2>";
 
     // display a link to the correct class information
-    echo "<a href='./classes.php?id='".$CID.">";
+    echo "<a href='./classes.php?id=$CID'>Click Me</a>";
 
     // close the block
     echo "</div>";
