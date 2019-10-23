@@ -5,7 +5,7 @@ include "./xcommon.php";
 $id = $_REQUEST['id'];
 
 // get all courses that match the id of the selected pathway
-$query1 = "select * from Course;";
+$query1 = "select * from Course where PathwayID=$id;";
 
 // display Compulsory classes of all courses
 $query2 = "select * from Course where Compulsory='Y';";
