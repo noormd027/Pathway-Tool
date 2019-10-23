@@ -9,20 +9,20 @@ if (empty($_REQUEST['i'])) $_REQUEST['i'] = '1';
 switch($_REQUEST['i'])
 {
   case '1':
-    // sort by id lowest to highest
-		$query = "select * from Pathway where ProgrammeID=$id order by PathwayID desc;";
-		$results = mysqli_query($GLOBALS['conn'], $query) or die(mysqli_error($GLOBALS['conn']));
-		break;
-	case '2':
-    // sort by id highest to lowest
-		$query = "select * from Pathway where ProgrammeID=$id order by PathwayID asc;";
-		$results = mysqli_query($GLOBALS['conn'], $query) or die(mysqli_error($GLOBALS['conn']));
-		break;
-	case '3':
-    // sort by name a-z
-		$query = "select * from Pathway where ProgrammeID=$id order by PathwayName desc;";
-		$results = mysqli_query($GLOBALS['conn'], $query) or die(mysqli_error($GLOBALS['conn']));
-		break;
+  // sort by id lowest to highest
+  $query = "select * from Pathway where ProgrammeID=$id order by PathwayID desc;";
+  $results = mysqli_query($GLOBALS['conn'], $query) or die(mysqli_error($GLOBALS['conn']));
+  break;
+  case '2':
+  // sort by id highest to lowest
+  $query = "select * from Pathway where ProgrammeID=$id order by PathwayID asc;";
+  $results = mysqli_query($GLOBALS['conn'], $query) or die(mysqli_error($GLOBALS['conn']));
+  break;
+  case '3':
+  // sort by name a-z
+  $query = "select * from Pathway where ProgrammeID=$id order by PathwayName desc;";
+  $results = mysqli_query($GLOBALS['conn'], $query) or die(mysqli_error($GLOBALS['conn']));
+  break;
 }
 
 ?>
@@ -72,14 +72,21 @@ switch($_REQUEST['i'])
     echo "<h2>".$PWName."</h2>";
     echo "<h3>".$PWID."</h3>";
 
-    //create a link to the next page, parsing the pathwayID
-    echo "<a href='./courses.php?id=".$PWID."'>Show Courses in Pathway</a>";
+    // new querry so that the link to the courses page will display the correct link
+    $ClassQuery = "select * from Course where PathwayID=$PWID";
+    $ClassQueryResult = mysqli_query($GLOBALS['conn'], $query) or die(mysqli_error($GLOBALS['conn']));
 
-    // close the block
-    echo "</div>";
+    while ($PathwayResults = mysqli_fetch_array($results))
+    {
+      //create a link to the next page, parsing the pathwayID
+      echo "<a href='./courses.php?id=".$PWID."'>Click me</a>";
+
+      // close the block
+      echo "</div>";
+    }
   }
 
   ?>
 
-  </body>
-  </html>
+</body>
+</html>
