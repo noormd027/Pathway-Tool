@@ -40,17 +40,21 @@ ul.courseSelections{
 }
 
 ul.courseSelections li{
-  background-color: #229AA4;
+  background-color: green;
 
-  width: 250px;
+  width: 85%;
   height: 50px;
   line-height: 25px;
   border-bottom: 1px solid #fff;
+  padding-left: 10px;
+  margin-left: 15px;
+    list-style: none;
 }
 ul.courseSelections li a{
   font-family: sans-serif;
   font-size: 14px;
   text-decoration: none;
+
 }
 ul.bachelors{}
 
