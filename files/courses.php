@@ -58,7 +58,6 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
     $CC = $CourseResults['CourseCode'];
     $CName = $CourseResults['CourseName'];
     $level = $CourseResults['Level'];
-    $PWID = $CourseResults['PathwayID'];
     $Requisite = $CourseResults['PreRequisite'];
     $CRequisite = $CourseResults['CoRequisite'];
     $Compulsory = $CourseResults['Compulsory'];
@@ -77,7 +76,6 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
     echo "<h2>Course name: ".$CName."</h2>";
     echo "<h2>Course level: ".$level."</h2>";
     echo "<h2>Course Code: ".$CC."</h2>";
-    echo "<h2>In pathway: ".$PWID."</h2>";
 
     // if the class has no PreRequisite's then print NONE, otherwise print the correct data
     if ($Requisite == NULL) {
