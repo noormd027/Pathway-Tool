@@ -110,4 +110,4 @@ INSERT INTO Course VALUES (45, 'ISCG7409', 7, 'Cyber Security for Finance Profes
 
 INSERT INTO Course VALUES (46, 'ISCG7410', 7, 'Information Systems Management', NULL, 'ISCG6411', NULL, 'N', 15);
 INSERT INTO Course VALUES (47, 'ISCG7411', 7, 'Project Management Methodologies', NULL, 'ISCG6407', NULL, 'N', 15);
-INSERT INTO Course VALUES (44, 'ISCG7408', 7, 'Malware Analysis', NULL, 'ISCG6407', NULL, 'N', 15);
+INSERT INTO Course VALUES (48, 'ISCG7408', 7, 'Malware Analysis', NULL, 'ISCG6407', NULL, 'N', 15);
