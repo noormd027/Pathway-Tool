@@ -69,14 +69,17 @@ switch($_REQUEST['i'])
     echo "<div>";
 
     // display each pathway
-    echo "<h2>".$PWName."</h2>";
-    echo "<h3>".$PWID."</h3>";
+    echo "<h2>Name: ".$PWName."</h2>";
+    echo "<h3>ID: ".$PWID."</h3>";
 
     //create a link to the next page, parsing the pathwayID
     echo "<a href='./courses.php?id=".$PWID."'>Click me</a>";
 
     // close the block
     echo "</div>";
+
+    // added a line 
+    echo "<hr>";
   }
 
   ?>
