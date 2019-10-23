@@ -52,6 +52,7 @@ $ProgrammeResults = mysqli_query($GLOBALS['conn'], $ProgrammeQuery) or die(mysql
         //revised the code so it's easier to read
         echo "<li>$ID - $Name: <a href='pathways.php?i=1&id=$PWID'>Click Me</a></li>";
     }
+  }
     ?>
 
 </ul>
