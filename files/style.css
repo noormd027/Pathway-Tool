@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: white ;
+  background-color: Black ;
 }
  nav ul{
    float: left;
@@ -17,7 +17,7 @@ body {
 nav ul li a{
   display: block;
   font-family: sans-serif;
-  color: #222;
+  color: white ;
   font-size: 14px;
   padding: 0px 85px;
   text-decoration: none;
