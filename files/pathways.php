@@ -38,7 +38,7 @@ switch($_REQUEST['i'])
   <nav>
     <ul>
       <li><a href="https://www.unitec.ac.nz/" target="_blank">Unitec</a></li>
-      <li><a href="index.html" target="_blank">Pathway Planner</a></li>
+      <li><a href="index.php" target="_blank">Pathway Planner</a></li>
     </ul>
   </nav>
 
