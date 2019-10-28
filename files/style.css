@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  background-color: navajowhite;
+  background-color: black;
 }
 
 body {
@@ -31,7 +31,7 @@ nav ul li a{
    padding-bottom: 70px;
    color: green;
 }
- h2{
+ h2,h3{
   color: white;
  }
 
