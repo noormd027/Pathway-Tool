@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: navajowhite;
 }
 
 body {
@@ -31,17 +31,16 @@ nav ul li a{
    padding-bottom: 70px;
    color: green;
 }
- h2,h3{
-  font-family: ;
-color: white;
+ h2{
+  color: white;
  }
+
 ul.courseSelections{
 color:white;
 }
 
 ul.courseSelections li{
   background-color: gray;
-
   width: 85%;
   height: 50px;
   line-height: 25px;
@@ -56,6 +55,7 @@ ul.courseSelections li a{
   text-decoration: none;
 
 }
+
 ul.bachelors{}
 
 ul.bachelors li{
