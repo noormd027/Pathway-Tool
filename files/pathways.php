@@ -32,7 +32,7 @@ switch($_REQUEST['i'])
 <head>
   <meta charset="utf-8">
   <title>Classes in Cybersecurity</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./pathways.css">
 </head>
 <body>
   <nav>
