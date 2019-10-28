@@ -32,7 +32,7 @@ switch($_REQUEST['i'])
 <head>
   <meta charset="utf-8">
   <title>Classes in Cybersecurity</title>
-  <link rel="stylesheet" href="./pathways.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <nav>
@@ -78,7 +78,7 @@ switch($_REQUEST['i'])
     // close the block
     echo "</div>";
 
-    // added a line 
+    // added a line
     echo "<hr>";
   }
 

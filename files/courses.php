@@ -21,7 +21,7 @@ $results2 = mysqli_query($GLOBALS['conn'], $query2) or die(mysqli_error($GLOBALS
 <head>
   <meta charset="utf-8">
   <title>Course List</title>
-  <link rel="stylesheet" href="./courses.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <nav>
